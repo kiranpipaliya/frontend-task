@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import type { Component } from 'vue'
-import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
-import { VNodeRenderer } from './VNodeRenderer'
 import { layoutConfig } from '@layouts'
 import { VerticalNavGroup, VerticalNavLink, VerticalNavSectionTitle } from '@layouts/components'
 import { useLayoutConfigStore } from '@layouts/stores/config'
 import { injectionKeyIsVerticalNavHovered } from '@layouts/symbols'
 import type { NavGroup, NavLink, NavSectionTitle, VerticalNavItems } from '@layouts/types'
+import type { Component } from 'vue'
+import { PerfectScrollbar } from 'vue3-perfect-scrollbar'
+import { VNodeRenderer } from './VNodeRenderer'
 
 interface Props {
   tag?: string | Component
@@ -150,7 +150,7 @@ const hideTitleAndIcon = configStore.isVerticalNavMini(isHovered)
   column-gap: 0.75rem;
 
   .app-logo-title {
-    font-size: 1.375rem;
+    font-size: 17px;
     font-weight: 700;
     letter-spacing: 0.25px;
     line-height: 1.5rem;

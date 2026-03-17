@@ -50,6 +50,7 @@
   body .layout-wrapper.layout-nav-type-vertical.layout-navbar-sticky {
     .layout-navbar {
       inset-block-start: variables.$vertical-nav-floating-navbar-top;
+      padding: 0 variables.$layout-boxed-content-gutter-x;
     }
 
     /*

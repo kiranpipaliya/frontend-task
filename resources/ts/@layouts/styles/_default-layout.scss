@@ -11,11 +11,8 @@ body {
 
 .layout-page-content {
   @include mixins.boxed-content(true);
-
   flex-grow: 1;
-
-  // TODO: Use grid gutter variable here
-  padding-block: 1.5rem;
+  padding: 0 variables.$layout-boxed-content-gutter-x;
 }
 
 .layout-footer {

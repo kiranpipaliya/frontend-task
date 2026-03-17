@@ -1,12 +1,9 @@
+import marketing from '@images/svg/marketing.svg'
+
 export default [
   {
-    title: 'Home',
+    title: 'Campaign',
     to: { name: 'root' },
-    icon: { icon: 'tabler-smart-home' },
-  },
-  {
-    title: 'Second page',
-    to: { name: 'second-page' },
-    icon: { icon: 'tabler-file' },
+    icon: { icon: marketing },
   },
 ]

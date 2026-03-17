@@ -1,5 +1,13 @@
 @use "@core-scss/base/utils";
 @use "@configured-variables" as variables;
+@use "variables" as vuetify-vars;
+@use "font-families" as fonts;
+
+// 👉 Theme font family as CSS variables (for use in components)
+:root {
+  --v-font-family-body: #{vuetify-vars.$body-font-family};
+  --v-font-family-roboto: #{fonts.$font-family-roboto};
+}
 
 // 👉 Body
 

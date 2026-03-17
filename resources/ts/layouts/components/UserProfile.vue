@@ -1,130 +1,115 @@
 <script setup lang="ts">
-import avatar1 from '@images/avatars/avatar-1.png'
+import avatar1 from '@images/avatars/avatar-1.png';
 </script>
 
 <template>
-  <VBadge
-    dot
-    location="bottom right"
-    offset-x="3"
-    offset-y="3"
-    bordered
-    color="success"
-  >
-    <VAvatar
-      class="cursor-pointer"
-      color="primary"
-      variant="tonal"
-    >
-      <VImg :src="avatar1" />
+    <div class="header-user-profile d-flex align-center gap-3">
+        <div class="header-user-info flex-shrink-0">
+            <div class="header-user-name text-body-2 font-weight-medium">
+                John Doe
+            </div>
+            <div class="text-caption text-medium-emphasis header-user-role">
+                Admin
+            </div>
+        </div>
+        <VBadge dot location="bottom right" offset-x="3" offset-y="3" bordered color="success">
+            <VAvatar class="cursor-pointer" color="primary" variant="tonal">
+                <VImg :src="avatar1" />
 
-      <!-- SECTION Menu -->
-      <VMenu
-        activator="parent"
-        width="230"
-        location="bottom end"
-        offset="14px"
-      >
-        <VList>
-          <!-- 👉 User Avatar & Name -->
-          <VListItem>
-            <template #prepend>
-              <VListItemAction start>
-                <VBadge
-                  dot
-                  location="bottom right"
-                  offset-x="3"
-                  offset-y="3"
-                  color="success"
-                >
-                  <VAvatar
-                    color="primary"
-                    variant="tonal"
-                  >
-                    <VImg :src="avatar1" />
-                  </VAvatar>
-                </VBadge>
-              </VListItemAction>
-            </template>
+                <!-- SECTION Menu -->
+                <VMenu activator="parent" width="230" location="bottom end" offset="14px">
+                    <VList>
+                        <!-- 👉 User Avatar & Name -->
+                        <VListItem>
+                            <template #prepend>
+                                <VListItemAction start>
+                                    <VBadge dot location="bottom right" offset-x="3" offset-y="3" color="success">
+                                        <VAvatar color="primary" variant="tonal">
+                                            <VImg :src="avatar1" />
+                                        </VAvatar>
+                                    </VBadge>
+                                </VListItemAction>
+                            </template>
 
-            <VListItemTitle class="font-weight-semibold">
-              John Doe
-            </VListItemTitle>
-            <VListItemSubtitle>Admin</VListItemSubtitle>
-          </VListItem>
+                            <VListItemTitle class="font-weight-semibold">
+                                John Doe
+                            </VListItemTitle>
+                            <VListItemSubtitle>Admin</VListItemSubtitle>
+                        </VListItem>
 
-          <VDivider class="my-2" />
+                        <VDivider class="my-2" />
 
-          <!-- 👉 Profile -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-user"
-                size="22"
-              />
-            </template>
+                        <!-- 👉 Profile -->
+                        <VListItem link>
+                            <template #prepend>
+                                <VIcon class="me-2" icon="tabler-user" size="22" />
+                            </template>
 
-            <VListItemTitle>Profile</VListItemTitle>
-          </VListItem>
+                            <VListItemTitle>Profile</VListItemTitle>
+                        </VListItem>
 
-          <!-- 👉 Settings -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-settings"
-                size="22"
-              />
-            </template>
+                        <!-- 👉 Settings -->
+                        <VListItem link>
+                            <template #prepend>
+                                <VIcon class="me-2" icon="tabler-settings" size="22" />
+                            </template>
 
-            <VListItemTitle>Settings</VListItemTitle>
-          </VListItem>
+                            <VListItemTitle>Settings</VListItemTitle>
+                        </VListItem>
 
-          <!-- 👉 Pricing -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-currency-dollar"
-                size="22"
-              />
-            </template>
+                        <!-- 👉 Pricing -->
+                        <VListItem link>
+                            <template #prepend>
+                                <VIcon class="me-2" icon="tabler-currency-dollar" size="22" />
+                            </template>
 
-            <VListItemTitle>Pricing</VListItemTitle>
-          </VListItem>
+                            <VListItemTitle>Pricing</VListItemTitle>
+                        </VListItem>
 
-          <!-- 👉 FAQ -->
-          <VListItem link>
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-help"
-                size="22"
-              />
-            </template>
+                        <!-- 👉 FAQ -->
+                        <VListItem link>
+                            <template #prepend>
+                                <VIcon class="me-2" icon="tabler-help" size="22" />
+                            </template>
 
-            <VListItemTitle>FAQ</VListItemTitle>
-          </VListItem>
+                            <VListItemTitle>FAQ</VListItemTitle>
+                        </VListItem>
 
-          <!-- Divider -->
-          <VDivider class="my-2" />
+                        <!-- Divider -->
+                        <VDivider class="my-2" />
 
-          <!-- 👉 Logout -->
-          <VListItem to="/login">
-            <template #prepend>
-              <VIcon
-                class="me-2"
-                icon="tabler-logout"
-                size="22"
-              />
-            </template>
+                        <!-- 👉 Logout -->
+                        <VListItem to="/login">
+                            <template #prepend>
+                                <VIcon class="me-2" icon="tabler-logout" size="22" />
+                            </template>
 
-            <VListItemTitle>Logout</VListItemTitle>
-          </VListItem>
-        </VList>
-      </VMenu>
-      <!-- !SECTION -->
-    </VAvatar>
-  </VBadge>
+                            <VListItemTitle>Logout</VListItemTitle>
+                        </VListItem>
+                    </VList>
+                </VMenu>
+                <!-- !SECTION -->
+            </VAvatar>
+        </VBadge>
+    </div>
 </template>
+
+<style scoped>
+.header-user-profile {
+    min-width: 0;
+}
+
+.header-user-info {
+    text-align: end;
+}
+
+.header-user-name {
+    line-height: 1.25;
+    color: rgb(var(--v-theme-header-name));
+}
+
+.header-user-role {
+    line-height: 1.25;
+    color: rgb(var(--v-theme-header-role));
+}
+</style>

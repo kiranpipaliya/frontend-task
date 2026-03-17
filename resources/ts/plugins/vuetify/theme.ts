@@ -1,13 +1,34 @@
 import type { ThemeDefinition } from 'vuetify'
 
-export const staticPrimaryColor = '#7367F0'
-export const staticPrimaryDarkenColor = '#675DD8'
+export const staticPrimaryColor = '#3762EE'
+export const staticPrimaryDarkenColor = '#8BA6FF'
 
 export const themes: Record<string, ThemeDefinition> = {
   light: {
     dark: false,
     colors: {
       'primary': staticPrimaryColor,
+      'primary-gradient-end': '#4B8DFF',
+      'workflow-scrim': '#0F172A',
+      'workflow-title': '#5E5873',
+      'workflow-header-bg': '#F8F8F8',
+      'workflow-chip-bg': '#E6F8EE',
+      'workflow-chip-text': '#28C76F',
+      'workflow-step-icon-bg': '#E8E8E8',
+      'workflow-step-label': '#444050',
+      'workflow-footer-close-text': '#9692A4',
+      'workflow-border-subtle': '#EBE9F1',
+      'workflow-border-strong': '#DDD9E6',
+      'workflow-border-dashed': '#E4E4F0',
+      'workflow-bg-soft': '#F5F5F7',
+      'workflow-text-muted': '#9692A4',
+      'workflow-text-main': '#5E5873',
+      'workflow-text-secondary': '#444050',
+      'sidebar-logo-bg': '#E1E7F1',
+      'sidebar-logo-text': '#141B34',
+      'grey-light-bg': '#F4F5F8',
+      'header-name': '#6E6B7B',
+      'header-role': '#B9B9C3',
       'on-primary': '#fff',
       'primary-darken-1': '#675DD8',
       'secondary': '#808390',
@@ -82,6 +103,27 @@ export const themes: Record<string, ThemeDefinition> = {
     dark: true,
     colors: {
       'primary': staticPrimaryColor,
+      'primary-gradient-end': '#7EA5FF',
+      'workflow-scrim': '#000000',
+      'workflow-title': '#E1DEF5',
+      'workflow-header-bg': '#2F3349',
+      'workflow-chip-bg': '#163626',
+      'workflow-chip-text': '#7CE9A8',
+      'workflow-step-icon-bg': '#353A52',
+      'workflow-step-label': '#E1DEF5',
+      'workflow-footer-close-text': '#C0BDCF',
+      'workflow-border-subtle': '#433F5F',
+      'workflow-border-strong': '#4E4A70',
+      'workflow-border-dashed': '#49456B',
+      'workflow-bg-soft': '#27293D',
+      'workflow-text-muted': '#C0BDCF',
+      'workflow-text-main': '#E1DEF5',
+      'workflow-text-secondary': '#E1DEF5',
+      'sidebar-logo-bg': '#2F3349',
+      'sidebar-logo-text': '#E1DEF5',
+      'grey-light-bg': '#26293A',
+      'header-name': '#E1DEF5',
+      'header-role': '#B6BEE3',
       'on-primary': '#fff',
       'primary-darken-1': '#675DD8',
       'secondary': '#808390',

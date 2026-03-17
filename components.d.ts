@@ -383,6 +383,7 @@ declare module 'vue' {
     TablePagination: typeof import('./resources/ts/@core/components/TablePagination.vue')['default']
     TheCustomizer: typeof import('./resources/ts/@core/components/TheCustomizer.vue')['default']
     ThemeSwitcher: typeof import('./resources/ts/@core/components/ThemeSwitcher.vue')['default']
+    ThemeToggleSlider: typeof import('./resources/ts/@core/components/ThemeToggleSlider.vue')['default']
     TimelineBasic: typeof import('./resources/ts/views/demos/components/timeline/TimelineBasic.vue')['default']
     TimelineOutlined: typeof import('./resources/ts/views/demos/components/timeline/TimelineOutlined.vue')['default']
     TimelineWithIcons: typeof import('./resources/ts/views/demos/components/timeline/TimelineWithIcons.vue')['default']

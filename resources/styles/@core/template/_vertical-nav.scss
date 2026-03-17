@@ -48,8 +48,13 @@
   &.layout-vertical-nav-collapsed {
     .layout-vertical-nav:not(.hovered) {
       .nav-header {
+        justify-content: center;
+        .app-title-wrapper{
+            margin: 0;
+        }
         .header-action {
           opacity: 0;
+width: 0;
         }
       }
     }

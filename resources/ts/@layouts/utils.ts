@@ -49,12 +49,17 @@ export const resolveNavLinkRouteName = (link: NavLink, router: Router) => {
 export const isNavLinkActive = (link: NavLink, router: Router) => {
   // Matched routes array of current route
   const matchedRoutes = router.currentRoute.value.matched
+  const currentPath = router.currentRoute.value.path
 
   // Check if provided route matches route's matched route
   const resolveRoutedName = resolveNavLinkRouteName(link, router)
 
   if (!resolveRoutedName)
     return false
+
+  // Special-case: any /campaign* route should keep "Campaign" nav item active
+  if (link.title === 'Campaign' && currentPath.startsWith('/campaign'))
+    return true
 
   return matchedRoutes.some(route => {
     return route.name === resolveRoutedName || route.meta.navActiveLink === resolveRoutedName
