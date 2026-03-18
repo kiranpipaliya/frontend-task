@@ -181,6 +181,7 @@ const handleWorkflowNext = () => {
     gap: 0.75rem;
     display: flex;
     flex: 0;
+    flex-wrap: wrap;
 }
 
 @media (min-width: 960px) {
@@ -207,6 +208,7 @@ const handleWorkflowNext = () => {
     text-align: center;
     gap: 1.75rem;
     margin-top: 90px;
+    padding-inline: 1rem;
 }
 
 .campaign-illustration {
@@ -226,6 +228,7 @@ const handleWorkflowNext = () => {
     background-image: linear-gradient(90deg, rgb(var(--v-theme-primary)) 0%, rgb(var(--v-theme-primary-gradient-end)) 100%);
     color: rgb(var(--v-theme-on-primary));
     box-shadow: 0 8px 20px rgba(var(--v-theme-primary), 0.35);
+    max-width: 100%;
 }
 
 .workflow-modal-card {
@@ -233,6 +236,7 @@ const handleWorkflowNext = () => {
     padding: 0;
     box-shadow: 0 18px 45px rgba(var(--v-theme-workflow-scrim), 0.16);
     border: 1px solid rgba(var(--v-theme-grey-200), 1);
+    max-width: 100%;
 }
 
 .workflow-dialog {
@@ -432,11 +436,95 @@ const handleWorkflowNext = () => {
 
 @media (max-width: 959px) {
     .campaign-page {
-        padding: 1rem;
+        padding: 1rem 0;
+    }
+
+    .campaign-filters {
+        gap: 0;
+        flex-wrap: nowrap;
+    }
+
+    .campaign-filters .campaign-filter-select,
+    .campaign-filters .campaign-filter-search {
+        flex: 0 0 200px;
     }
 
     .campaign-card {
         padding: 1rem 1rem 2rem;
     }
+
+}
+
+@media (max-width: 768px) {
+    .workflow-dialog .workflow-modal-header {
+        padding: 12px 46px 12px 20px;
+    }
+
+    .card-content {
+        padding: 16px 20px 0 20px;
+    }
+
+    .workflow-dialog .mode-features {
+        gap: 5px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .campaign-filters {
+        flex-wrap: wrap;
+    }
+
+    .campaign-filters .campaign-filter-select,
+    .campaign-filters .campaign-filter-search {
+        flex: 0 0 100%;
+        padding-bottom: 0;
+    }
+
+    .campaign-empty-state {
+        margin-top: 10%;
+        gap: 10px;
+
+    }
+
+    .campaign-cta {
+        padding: 10px 24px !important;
+        height: auto;
+        font-size: 14px !important;
+    }
+
+    .workflow-dialog :deep(.v-overlay__content) {
+        margin: 12px !important;
+        width: 300px;
+    }
+
+    .workflow-dialog :deep(.v-card-actions) {
+        padding: 12px 20px !important;
+    }
+
+    .mode-radio {
+        width: 16px;
+        height: 16px;
+    }
+
+    .mode-card-inner {
+        padding: 16px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+
+
+    }
+
+    .mode-card-inner {
+        width: 100%;
+        align-items: center;
+    }
+
+    .card-content {
+        gap: 14px;
+    }
+
 }
 </style>

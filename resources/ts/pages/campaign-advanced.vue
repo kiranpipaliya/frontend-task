@@ -156,7 +156,8 @@
                                     <!-- Upload CSV -->
                                     <template v-else-if="selectedImportMethod === 'csv'">
                                         <div class="csv-dropzone-card">
-                                            <template v-if="csvSelectedFile">
+                                            <!-- <template v-if="csvSelectedFile"> -->
+                                            <template v-if="true">
                                                 <!-- Map Properties (shown when file is selected) -->
                                                 <div class="csv-map-properties">
                                                     <div class="csv-map-header">
@@ -175,29 +176,33 @@
                                                     </div>
                                                     <div class="csv-map-body">
                                                         <!-- Card: header (Contact Field | CSV Column) + content (columns of fields) -->
-                                                        <div class="csv-map-card">
-                                                            <div class="csv-map-card-header">
-                                                                <span class="csv-map-card-header-label">Contact
-                                                                    Field</span>
-                                                                <span class="csv-map-card-header-label">CSV
-                                                                    Column</span>
-                                                            </div>
-                                                            <div class="csv-map-card-content">
-                                                                <div class="csv-map-col">
-                                                                    <div v-for="row in csvMappedRows" :key="row.field"
-                                                                        class="csv-map-field-row csv-map-field-row--contact">
-                                                                        <VIcon :icon="ProfileIcon" size="24"
-                                                                            class="csv-map-field-icon csv-map-field-icon--contact" />
-                                                                        <span>{{ row.field }}</span>
-                                                                    </div>
+                                                        <div class="csv-map-card-wrap">
+                                                            <div class="csv-map-card">
+                                                                <div class="csv-map-card-header">
+                                                                    <span class="csv-map-card-header-label">Contact
+                                                                        Field</span>
+                                                                    <span class="csv-map-card-header-label">CSV
+                                                                        Column</span>
                                                                 </div>
-                                                                <div class="csv-map-col">
-                                                                    <div v-for="row in csvMappedRows" :key="row.field"
-                                                                        class="csv-map-field-row csv-map-field-row--csv">
-                                                                        <VIcon :icon="row.columnIcon" size="24"
-                                                                            class="csv-map-field-icon csv-map-field-icon--csv" />
-                                                                        <span>{{ row.csvColumn }} ({{ row.count
-                                                                        }})</span>
+                                                                <div class="csv-map-card-content">
+                                                                    <div class="csv-map-col">
+                                                                        <div v-for="row in csvMappedRows"
+                                                                            :key="row.field"
+                                                                            class="csv-map-field-row csv-map-field-row--contact">
+                                                                            <VIcon :icon="ProfileIcon" size="24"
+                                                                                class="csv-map-field-icon csv-map-field-icon--contact" />
+                                                                            <span>{{ row.field }}</span>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="csv-map-col">
+                                                                        <div v-for="row in csvMappedRows"
+                                                                            :key="row.field"
+                                                                            class="csv-map-field-row csv-map-field-row--csv">
+                                                                            <VIcon :icon="row.columnIcon" size="24"
+                                                                                class="csv-map-field-icon csv-map-field-icon--csv" />
+                                                                            <span>{{ row.csvColumn }} ({{ row.count
+                                                                                }})</span>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -222,7 +227,8 @@
                                                                             <VIcon icon="tabler-list" size="24"
                                                                                 class="csv-unmapped-row-icon" />
                                                                             <span class="csv-unmapped-row-label">{{
-                                                                                item.name }} ({{ item.count }})</span>
+                                                                                item.name }} ({{ item.count
+                                                                                }})</span>
                                                                             <span class="csv-unmapped-row-count">({{
                                                                                 item.count }})</span>
                                                                         </div>
@@ -232,6 +238,7 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+
                                                     </div>
                                                 </div>
                                             </template>
@@ -2059,6 +2066,213 @@ meta:
 
     .flow-frame {
         padding: 14px 10px 16px;
+    }
+
+    .linkedin-search-body :deep(.v-expansion-panel-text__wrapper) {
+        padding: 20px 15px;
+    }
+
+    .flow-method-header {
+        gap: 5px;
+        align-items: start;
+    }
+
+    .flow-method-header-icon {
+        margin-top: 2px;
+
+    }
+
+    .csv-dropzone {
+        padding: 20px;
+    }
+
+    .sender-table-wrap {
+        overflow: auto;
+    }
+
+    .sender-table {
+        min-width: 780px;
+
+    }
+}
+
+@media (max-width: 768px) {
+    .csv-map-title {
+        font-size: 16px !important;
+    }
+
+    .csv-map-remove-btn {}
+
+    .csv-map-hint {
+        align-items: start;
+        font-size: 13px !important;
+        margin-top: 6px;
+
+    }
+
+    .csv-map-body {
+        flex-direction: column;
+        margin: 0 !important;
+    }
+
+    .csv-map-card-wrap {
+        padding: 0 8px;
+        overflow: auto;
+        width: calc(100% - 8px);
+    }
+
+    .csv-map-card-header {}
+
+    .csv-unmapped-row,
+    .csv-map-field-row {
+        padding: 7px;
+    }
+
+    .csv-map-field-row--contact {
+        gap: 6px;
+    }
+
+    .csv-unmapped-row-icon,
+    .csv-map-field-icon--csv,
+    .csv-map-field-icon--contact {
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 18px !important;
+    }
+
+    .csv-unmapped-row-label,
+    .csv-map-card-header-label {
+        font-size: 13px !important;
+    }
+
+    .csv-map-hint {
+        align-items: start !important;
+    }
+
+    .csv-map-card {
+        min-width: 470px;
+    }
+
+    .lookalike-modal-header {
+        padding: 14px 16px;
+    }
+
+    .lookalike-modal-title {
+        font-size: 18px !important;
+
+    }
+
+    .lookalike-modal-subtitle {
+        font-size: 13px !important;
+    }
+
+    .lookalike-modal-body {
+        padding: 16px;
+    }
+
+    .lookalike-empty-state {
+        height: 300px;
+    }
+
+    .lookalike-modal-card .lookalike-empty-state {
+        margin-top: -10px !important;
+    }
+
+    .lookalike-empty-title {
+        font-size: 24px;
+    }
+
+    .lookalike-list-item-icon {
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 18px !important;
+    }
+
+    .lookalike-list-item-count {
+        font-size: 12px !important;
+    }
+
+    .lookalike-modal-card .lookalike-list-item-name {
+        font-size: 14px !important;
+    }
+
+    .lookalike-list-item-text {
+        gap: 0px;
+    }
+
+    .lookalike-list-item {
+        padding: 10px;
+    }
+
+    .sender-tab {
+        padding: 8px;
+        font-size: 12 px !important;
+    }
+
+    .sender-section-header {
+        padding: 16px;
+    }
+
+    .sender-section-title {
+        font-size: 16px !important;
+    }
+
+    .sender-section-desc {
+        line-height: 1.2;
+    }
+
+
+
+
+}
+
+@media (max-width: 575px) {
+    .flow-steps {
+        overflow: auto;
+    }
+
+    .flow-content-step-badge {
+        margin-left: 0;
+        font-size: 10px !important;
+        padding: 0px 5px !important;
+    }
+
+    .flow-import-title {
+        max-width: calc(100% - 95px);
+    }
+
+    .flow-import-header {
+        gap: 5px;
+        font-size: 14px !important;
+    }
+
+    .flow-step {
+        padding: 9px !important;
+    }
+
+    .flow-steps .icon-wrapper {
+        padding: 5px 8px !important;
+        font-size: 16px !important;
+    }
+
+    .flow-frame {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 490px) {
+    .flow-import-col {
+        max-width: 100%;
+    }
+
+    .flow-import-card {
+        max-width: 100%;
+
+    }
+
+    .flow-import-row {
+        flex-direction: column;
     }
 }
 </style>

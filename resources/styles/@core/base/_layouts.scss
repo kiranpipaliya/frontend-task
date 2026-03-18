@@ -53,6 +53,12 @@
       padding: 0 variables.$layout-boxed-content-gutter-x;
     }
 
+    @media (max-width: 575px) {
+      .layout-navbar {
+        padding: 0 16px;
+      }
+    }
+
     /*
       ℹ️ If it's floating navbar
       Add `vertical-nav-floating-navbar-top` as margin top to .layout-page-content

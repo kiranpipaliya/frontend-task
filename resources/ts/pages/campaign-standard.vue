@@ -247,12 +247,20 @@
                                     </div>
                                     <div class="campaign-delay-strip">
                                         <span class="campaign-delay-strip-label">Once accepted wait</span>
-                                        <span class="campaign-delay-strip-badge">3</span>
-                                        <span class="campaign-delay-strip-unit">Minutes</span>
-                                        <span class="campaign-delay-strip-badge">3</span>
-                                        <span class="campaign-delay-strip-unit">Hour</span>
-                                        <span class="campaign-delay-strip-badge">3</span>
-                                        <span class="campaign-delay-strip-unit">days</span>
+                                        <div class="campaign-delay-strip-badges">
+                                            <div class="campaign-delay-strip-badge-wrap">
+                                                <span class="campaign-delay-strip-badge">3</span>
+                                                <span class="campaign-delay-strip-unit">Minutes</span>
+                                            </div>
+                                            <div class="campaign-delay-strip-badge-wrap">
+                                                <span class="campaign-delay-strip-badge">3</span>
+                                                <span class="campaign-delay-strip-unit">Hour</span>
+                                            </div>
+                                            <div class="campaign-delay-strip-badge-wrap">
+                                                <span class="campaign-delay-strip-badge">3</span>
+                                                <span class="campaign-delay-strip-unit">days</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -659,6 +667,14 @@ function goBack() {
     padding: 16px 18px;
     border-radius: 5px;
     border: 1px dashed rgb(var(--v-theme-workflow-border-dashed));
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.campaign-delay-strip-badge-wrap,
+.campaign-delay-strip-badges {
     display: flex;
     align-items: center;
     gap: 5px;
@@ -1234,7 +1250,131 @@ function goBack() {
     box-shadow: 0 2px 8px rgba(var(--v-theme-primary), 0.4);
     opacity: 0.95;
 }
+
+
+@media (max-width: 768px) {
+    .flow-steps {
+        overflow: auto;
+    }
+
+    .flow-content-step-badge {
+        margin-left: 0;
+        font-size: 10px !important;
+        padding: 0px 5px !important;
+    }
+
+    .flow-import-title {
+        max-width: calc(100% - 95px);
+    }
+
+    .flow-import-header {
+        gap: 5px;
+        font-size: 14px !important;
+    }
+
+    .flow-step {
+        padding: 9px !important;
+    }
+
+    .flow-steps .icon-wrapper {
+        padding: 8px !important;
+        display: flex;
+        font-size: 16px !important;
+    }
+
+    .flow-frame {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .flow-channel-btn {
+        padding: 13px !important;
+    }
+
+    .flow-schedule-row {
+        flex-wrap: wrap;
+    }
+
+    .flow-form-grid {
+        row-gap: 24px;
+        padding: 0;
+    }
+
+    .campaign-flow {
+        padding-left: 30px;
+    }
+
+    .campaign-step-btn {
+        padding: 10px 14px;
+        font-size: 12px;
+
+    }
+
+    .campaign-step-title {
+        font-size: 14px;
+    }
+
+    .campaign-step-card {
+        padding: 16px;
+    }
+
+    .flow-footer {
+        padding-left: 0;
+    }
+
+    .flow-draft-btn,
+    .flow-continue-btn {
+        padding: 10px 14px;
+    }
+
+    .flow-card {
+        padding: 23px 16px;
+    }
+
+}
+
+@media (max-width: 575px) {
+    .flow-channel-toggle {
+        flex-direction: column;
+    }
+
+    .flow-channel-btn {
+        margin: 0 !important;
+    }
+
+    .flow-label {
+        margin-bottom: 7px !important;
+    }
+
+    .campaign-step-actions {
+        flex-direction: column;
+    }
+
+    .campaign-delay-strip-label,
+    .campaign-message-preview,
+    .campaign-step-title {
+        font-size: 12px;
+    }
+
+    .campaign-delay-strip-badge-wrap,
+    .campaign-delay-strip {
+        flex-direction: column;
+        /* align-items: flex-start; */
+    }
+
+    .campaign-delay-strip {
+        gap: 10px;
+    }
+
+    .flow-footer-right,
+    .flow-footer {
+        flex-direction: column;
+    }
+
+}
 </style>
+
+
 
 <route lang="yaml">
 meta:
